@@ -1,16 +1,109 @@
 # Día 1
 
-En el día uno trabajamos todo lo que es la sintaxis básica de Python partiendo desde las variables y como declararlas hasta llegar a los tipos de datos. En este caso voy a resumir un poco del contenido aqui: 
+Python es un lenguaje de programación interpretado y multiplataforma cuya filosofía hace hincapié en una sintaxis que 
+favorezca el código legible, se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a 
+objetos, programación imperativa y, en menor medida, programación funcional.
+
+En el día uno trabajamos todo lo que es la sintaxis básica de Python partiendo desde las variables y como declararlas 
+hasta llegar a los tipos de datos. En este caso voy a resumir un poco del contenido aqui: 
+
 
 ## Variables, funciones y sintaxis básica
 
 ### Variables
 
-- Las [variables](https://python.land/courses/python-introduction/lessons/variables) son una herramienta util que sirve para almacenar valores (en realidad son una referencia en memoria a donde se guardo un objeto), generalmente se suelen nombrar usando letras minusculas y evitando usar palabras reservadas del lenguaje, para declarar una varariable se usa el signo de = que funciona como operador de asignacion y se encarga de decirle usted se llama, por ejemplo:
+Las [variables](https://python.land/courses/python-introduction/lessons/variables) son fundamentales ya que permiten definir nombres para los valores almacenados en memoria (son una 
+referencia a una dirección en memoria).
 
-```edad = 24```
+- Reglas para nombrar variables:
 
-- Las [funciones](https://python.land/introduction-to-python/functions) son una herramienta fundamental para todos los leguajes de programacion puesto que permiten crear estructuras de codigo que despues se pueden llamar para hacer una tarea especifica y así ahorrar tiempo, una funcion se declara usando la palabra reservada *def* seguido del nombre de la función, (), : y finalmanete el bloque de codigo identado que se encargara de realizar la tarea:
+    1. Sólo pueden contener los siguientes tipos de caracteres:
+        
+        - Letras minúsculas.
+        - Letras mayúsculas.
+        - Dígitos.
+        - Guiones bajos `(_)`.
+    
+    2. Deben empezar con una letra o un guión bajo, nunca con un dígito.
+    3. No pueden ser una palabra reservada del lenguaje (`«keywords»`).
+
+Podemos obtener un listado de las palabras reservadas del lenguaje de la siguiente forma:
+
+```python
+>>> help('keywords')
+
+Here is a list of the Python keywords. Enter any keyword to get more help.
+
+False       class           from           or
+None        continue        global         pass
+True        def             if             raise
+and         del             import         return
+as          elif            in             try
+assert      else            is             while
+async       except          lambda         with
+await       finally         nonlocal       yield
+break       for             not
+```
+
+**Nota:** Los nombres de variables son `«case-sensitive»`. Por ejemplo, *stuff* y *Stuff*
+son nombres diferentes.
+
+```python
+age = 24
+age2 = 48
+last_name = 'Perez Perez'
+last_name_2 = 'Perez Perez'
+_star = 'Sol'
+_3planet = 'Tierra'
+```
+
+#### Constantes
+
+Un caso especial de las variables son las constantes las cuales se suelen nombrar usando letras mayúsculas y se usan 
+para indicar variables cuyo valor no va a cambiar a lo largo de nuestro programa
+
+```python
+SOUND_SPEED = 343.2
+WATER_DENSITY = 997
+EARTH_NAME = 'La Tierra'
+```
+
+#### Asignación múltiple
+
+Python nos ofrece la posibilidad de hacer una **asignación múltiple** de la siguiente manera 
+
+```python
+tres = three = drei = 3
+```
+En este caso las tres variables utilizadas en el «lado izquierdo» tomarán el valor 3.
+
+#### Asignando una variable a otra variable
+
+Dada una variable `x` definida previamente se puede asignar a una nueva variable `y`
+
+```python
+people = 157503
+total_population = people
+```
+
+#### Conocer el tipo de una variable
+
+Para conocer el tipo de un valor o una variable, Python nos ofrece la función `type()`.
+
+### Funciones
+
+Una [función](https://python.land/introduction-to-python/functions) una estructura que nos permite agrupar código y perseguir dos objetivos claros:
+1. No repetir trozos de código durante nuestro programa.
+2. Reutilizar el código para distintas situaciones.
+
+Una función viene definida por su nombre, sus parámetros y su valor de retorno.
+
+#### Definir una función
+
+Para definir una función utilizamos la palabra reservada `def` seguida del nombre de la función. A continuación 
+aparecerán 0 o más parámetros separados por comas (entre  paréntesis), finalizando la línea con dos puntos : En la 
+siguiente línea empezaría el cuerpo  de la función que puede contener 1 o más sentencias, incluyendo (o no) una 
+sentencia de  retorno con el resultado mediante return.
 
 
 ```python
@@ -19,7 +112,10 @@ def function(parametro1, parametro2):
     return resultado
 ```
 
-- Podemos llamar a una función invocandola por su nombre:
+#### Invocar una función
+
+Para invocar (o «llamar») a una función sólo tendremos que escribir su nombre seguido de
+paréntesis. En el caso de la función sencilla (vista anteriormente) se haría así:
 
 ```python
 resultado = function(a, b)
@@ -27,9 +123,12 @@ resultado = function(a, b)
 
 ### Sintaxis básica 
 
-En Python al igual que en muchos otros lenguajes de programación hay una estructura que permite que las cosas funcionen bien, esto es lo que se llama sintaxis básica, en este caso vamos a mencionar la sintaxis básica para declara un ```if```, para crear comentarios de una y varias lineas:
+En Python al igual que en muchos otros lenguajes de programación hay una estructura que permite que las cosas funcionen 
+bien, esto es lo que se llama sintaxis básica, en este caso vamos a mencionar la sintaxis básica para declara un 
+```if```, para crear comentarios de una y varias lineas:
 
-- Lo primero que vamos a observar es un bloque de codigo que serai el codigo segido de la declaracion de una función, de un bucle y se define por medio de identacion 
+- Lo primero que vamos a observar es un bloque de codigo que serai el codigo segido de la declaracion de una función, 
+- de un bucle y se define por medio de identacion 
 
 ```python
 if condicion:
@@ -38,7 +137,8 @@ else:
     # Código si la condición es falsa
 ```
 
-- Comentarios, los comentarios son muy importantes dentro del código porque permiten seguir buenas practicas al documentar nuestros proyectos:
+- Comentarios, los comentarios son muy importantes dentro del código porque permiten seguir buenas practicas al 
+- documentar nuestros proyectos:
 
 ```python 
 # Comentario de una linea 
@@ -148,3 +248,9 @@ falso = False
 ```
 
 ***Bonus:** podemos saber el tipo de dato de una variable usando la funcion ```type```
+
+**Regla general:**
+
+- Usar nombres para variables (ejemplo article).
+- Usar verbos para funciones (ejemplo get_article()).
+- Usar adjetivos para booleanos (ejemplo available).

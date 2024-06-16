@@ -1,10 +1,21 @@
 """Variables, funciones y sintaxis básica"""
 
-# Variables: En Python, las variables se definen y se inicializan en una sola línea.
-edad = 24
-hora = 12
+# Variables
+age = 24
+age2 = 48
+last_name = 'Perez Perez'
+last_name_2 = 'Perez Perez'
+_star = 'Sol'
+_3planet = 'Tierra'
 
-# Funciones: En Python, las funciones se definen con la palabra reservada def y su contenido se define con indentación.
+# Constantes
+SOUND_SPEED = 343.2
+WATER_DENSITY = 997
+EARTH_NAME = 'La Tierra'
+
+########################################################################################################################
+
+# Funciones:
 def mi_funcion(parametro1, parametro2):
 	# Código de la función
 	resultado = parametro1 + parametro2
