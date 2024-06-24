@@ -11,9 +11,9 @@ except:
     # Manejar cualquier otra excepción
 
 try:
-    # Código sospechoso
+    # Código sospechoso 
 except ExceptionType:
-    # Manejar la excepción
+    # Manejar la excepción 
 finally:
     # Código que se ejecuta siempre
 
